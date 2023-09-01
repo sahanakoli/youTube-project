@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav>
-        <div class="navbar w-11/12 bg-base-100 mx-auto mt-10 ">
+        <div class="navbar w-11/12 ml-2 lg:ml-16 bg-base-100 mt-10 gap-2">
             <div class="navbar-start">
                <div>
                   <img src="icon/Logo.png" alt="" srcset="">  
@@ -19,18 +19,26 @@
                 <button onclick="sortView()" class="btn text-xl">Sort by view</button>
             </div>
             <div class="navbar-end">
-              <a class="btn btn-error text-xl ">Blog</a>
+              <button onclick="window.location.href='blog.html';" class="btn btn-error text-xl ">Blog</button>
             </div>
           </div>
     </nav>
-    <hr class="mt-5 w-11/12 h-2 ml-16">
+    <hr class="mt-5 w-11/12 ml-2 lg:ml-16">
     <header>
-        <div id="tab-container" class="flex justify-center mt-12">
+        <div id="tab-container" class="flex flex-wrap justify-center mt-12">
+          
+        </div>
+        <div class="flex justify-center">
+          <div id="no-found" class="hidden">
+            <img class="ml-24 mb-6" src="icon/Icon.png" alt="">
+            <h1 class="text-3xl font-bold">Oops!! Sorry,There is no</h1>
+            <h1 class="text-3xl font-bold ml-16">content here</h1>
+          </div>
         </div>
     </header>
     <main>
       <section>
-        <div id="card-container" class=" grid grid-cols-4 gap-2">
+        <div id="card-container" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 m-5">
         </div>
       </section>
     </main>
