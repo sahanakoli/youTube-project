@@ -1,10 +1,8 @@
+let loadData = null;
 const sortView = async () => {
-  const res = await fetch("https://openapi.programming-hero.com/api/videos/category/1000");
-  const data = await res.json();
   const cardContainer = document.getElementById('card-container');
   cardContainer.innerHTML ="";
-  const view = data.data;
-  const sort = view.sort((a, b) => parseFloat(b.others.views) - parseFloat(a.others.views));
+  const sort = loadData.sort((a, b) => parseFloat(b.others.views) - parseFloat(a.others.views));
   
   sort.forEach((item) => {
   const div = document.createElement('div');
@@ -57,7 +55,7 @@ const handleLoadData = async(categoryId) => {
   const cardContainer = document.getElementById('card-container');
   cardContainer.innerHTML ="";
   const newData = data.data;
-  
+  loadData = newData;
   
   if(newData.length === 0){
     document.getElementById('no-found').classList.remove('hidden');
